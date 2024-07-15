@@ -1,35 +1,24 @@
-// Import route handlers
-import root from "./root.js";
+// express to create a server
+import express from "express";
+const app = express();
+
+// dotenv to load environment variables
+import dotenv from "dotenv";
+dotenv.config();
+
+// api.js
 import api from "./api/api.js";
+// todo.js
 import todo from "./api/todo/todo.js";
+// movie.js
 import movie from "./api/movie/movie.js";
+// music.js
 import music from "./api/music/music.js";
 
-export default (req, res) => {
-  const { url, method } = req;
+app.get("/", api);
+app.get("/api", api);
+app.use("/api/movie", movie);
+app.use("/api/music", music);
+app.use("/api/todo", todo);
 
-  // Root route
-  if (url === "/" && method === "GET") {
-    return root(req, res);
-  }
-
-  // API route
-  if (url.startsWith("/api") && method === "GET") {
-    return api(req, res);
-  }
-
-  // Specific routes under /api
-  if (url.startsWith("/api/movie") && method === "GET") {
-    return movie(req, res);
-  }
-  if (url.startsWith("/api/music") && method === "GET") {
-    return music(req, res);
-  }
-  if (url.startsWith("/api/todo") && method === "GET") {
-    return todo(req, res);
-  }
-
-  // If no route matches, return 404
-  res.statusCode = 404;
-  res.end("Not Found");
-};
+export { app };
