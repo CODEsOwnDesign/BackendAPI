@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 // import the process module
 dotenv.config();
 // hello function from api/hello.js
-import hello from "./api/hello.js";
+import hello from "./api/todo/hello.js";
 
 const app = express();
 
