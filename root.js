@@ -5,7 +5,7 @@ export default function GET(request) {
   <!DOCTYPE html>
   <html>
 	<head>
-	  <title>APIs</title>
+	  <title>Backend APIs</title>
 	  <style>
 		body, html {
 		  height: 100%;

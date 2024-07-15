@@ -6,6 +6,8 @@ const app = express();
 import dotenv from "dotenv";
 dotenv.config();
 
+// root.js
+import root from "./root.js";
 // api.js
 import api from "./api/api.js";
 // todo.js
@@ -15,7 +17,7 @@ import movie from "./api/movie/movie.js";
 // music.js
 import music from "./api/music/music.js";
 
-app.get("/", api);
+app.get("/", root);
 app.get("/api", api);
 app.use("/api/movie", movie);
 app.use("/api/music", music);

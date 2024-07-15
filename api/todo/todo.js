@@ -4,7 +4,7 @@ export default function (req, res) {
     <!DOCTYPE html>
     <html>
       <head>
-        <title>Music Server</title>
+        <title>Todo Server</title>
         <style>
           body, html {
             height: 100%;
