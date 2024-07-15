@@ -24,8 +24,8 @@ export default function (req, res) {
         </style>
       </head>
       <body>
-        <h1 class="gradient-text">
-					Hello World! This is a simple Todo serverless function running on Vercel.
+        <h1 class="gradient-text>
+					Hello World! This is a simple Movie serverless function running on Vercel.
 				</h1>
       </body>
     </html>
